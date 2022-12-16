@@ -24,6 +24,7 @@ RUN yarn install
 
 EXPOSE 8080
 
+WORKDIR /
 COPY start-servers.sh /
-ENTRYPOINT ["/start-servers.sh"]
-
+#RUN chmod +x start-servers.sh
+#ENTRYPOINT ["/start-servers.sh"]
