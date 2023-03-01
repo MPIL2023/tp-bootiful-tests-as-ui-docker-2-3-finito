@@ -1,4 +1,9 @@
 FROM ubuntu:latest
+COPY ./start-servers.sh /start-servers.sh
+#RUN chmod +x start-servers.sh
+RUN echo "test"
+RUN chmod 755 /start-servers.sh
+
 RUN mkdir /home/work
 
 RUN apt-get update
@@ -23,8 +28,13 @@ RUN npm -g install yarn
 RUN yarn install
 
 EXPOSE 8080
+EXPOSE 4200
 
 WORKDIR /
-COPY start-servers.sh /
-#RUN chmod +x start-servers.sh
-#ENTRYPOINT ["/start-servers.sh"]
+COPY ./start-servers.sh /start-servers.sh
+RUN ls
+RUN echo "test"
+RUN chmod 755 /start-servers.sh
+RUN chmod +x /start-servers.sh
+
+CMD [ "/bin/bash","start-servers.sh" ]
