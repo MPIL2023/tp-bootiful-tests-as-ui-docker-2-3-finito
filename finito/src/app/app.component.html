@@ -4,14 +4,14 @@
 <input type="text" id="intToAdd">
 
 <br>
-<input (click)="addNumber()" type="button" value="Add this number "/> <label> </label>
+<input (click)="addNumber()" type="button" value="Add this number " id="add"/> <label> </label>
 <br>
-Résultat de l'addition : {{currentIntResultat}}
+Résultat de l'addition : <span id="additionResult">{{currentIntResultat}}</span>
 
 <br>
 
-<input (click)="getCurrent()" type="button" value="Current "/>
+<input (click)="getCurrent()" type="button" value="Current " id="getCurrent"/>
 
-<label>Entier actuel : {{currentInt}}</label>
+<label>Entier actuel : <span id="currentInt">{{currentInt}}</span></label>
 
 
